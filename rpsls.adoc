@@ -53,6 +53,7 @@ match (n:vulcan) return n
 [source,cypher]
 ----
 MATCH (r:object) where r.name="rock"
+return r
 ----
 
 
