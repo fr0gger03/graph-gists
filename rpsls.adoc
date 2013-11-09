@@ -7,6 +7,7 @@ See also the http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock[rules
 == Getting Started
 //console
 //hidden
+//setup
 
 Use the statement below to populate the graph with the objects and relationships.
 [source,cypher]
@@ -53,7 +54,7 @@ match (n:vulcan) return n
 === What are the actions for Rock?
 [source,cypher]
 ----
-START rock=node:name(name="rock")
+START rock=node(4)
 MATCH rock-[rel]->x
 return rock,rel,x
 ----
