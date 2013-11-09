@@ -22,6 +22,26 @@ MATCH n-[r]-()
 DELETE n,r
 ----
 
+==The Basics
+=== Find all Objects
+[source,cypher]
+----
+match (n:object) return n
+----
+
+=== Find all non-objects
+[source,cypher]
+----
+match n where NOT (n:object) return n
+----
+
+=== Find all vulcans
+[source,cypher]
+----
+match (n:vulcan) return n
+----
+
+
 == Understanding the Game
 
 === What are the actions for Rock?
