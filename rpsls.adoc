@@ -5,12 +5,20 @@
 See also the http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock[rules for the game on Wikipedia] and check out the *http://www.youtube.com/watch?v=cSLeBKT7-sM[YouTube video]*!
 
 //console
-//hidden
 
 [source,cypher]
 ----
 CREATE p=(paper:object {name:"paper"})-[:covers]->(rock:object {name:"rock"})-[:crushes]->(scissors:object {name:"scissors"})-[:decapitates]->(lizard:animal {name:"lizard"})-[:poisons]->(spock:vulcan:person {name:"spock"})-[:vaporizes]->(rock)-[:crushes]->(lizard)-[:eats]->(paper)-[:disproves]->(spock)-[:smashes]->(scissors)-[:cuts]->(paper);
 ----
+
+Use the code below at any time to wipe the database and start over...
+[source,cypher]
+----
+START n = node(*) 
+MATCH n-[r]-() 
+DELETE n,r
+----
+
 
 
 == What are the actions for Rock?
