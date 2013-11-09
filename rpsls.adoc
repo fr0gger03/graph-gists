@@ -6,8 +6,6 @@ See also the http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock[rules
 
 //console
 //hidden
-//setup
-
 
 [source,cypher]
 ----
