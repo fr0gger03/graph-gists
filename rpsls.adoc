@@ -22,7 +22,8 @@ MATCH n-[r]-()
 DELETE n,r
 ----
 
-==The Basics
+== The Basics
+
 === Find all Objects
 [source,cypher]
 ----
