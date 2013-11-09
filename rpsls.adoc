@@ -12,6 +12,7 @@ Use the statement below to populate the graph with the objects and relationships
 [source,cypher]
 ----
 CREATE p=(paper:object {name:"paper"})-[:covers]->(rock:object {name:"rock"})-[:crushes]->(scissors:object {name:"scissors"})-[:decapitates]->(lizard:animal {name:"lizard"})-[:poisons]->(spock:vulcan:person {name:"spock"})-[:vaporizes]->(rock)-[:crushes]->(lizard)-[:eats]->(paper)-[:disproves]->(spock)-[:smashes]->(scissors)-[:cuts]->(paper);
+CREATE INDEX on (name)
 ----
 
 Use the code below at any time to wipe the database and start over...
