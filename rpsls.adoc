@@ -52,7 +52,7 @@ match (n:vulcan) return n
 === What are the actions for Rock?
 [source,cypher]
 ----
-START rock= node ( rock.name="rock")
+START rock=node (*) WHERE has (rock.name="rock")
 MATCH rock-[rel]->x
 return rock,rel,x
 ----
