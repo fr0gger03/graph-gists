@@ -30,13 +30,11 @@ DELETE n,r
 
 ----
 
-
 === What are the actions for Paper?
 [source,cypher]
 ----
 
 ----
-
 
 === What are the actions for Scissors?
 [source,cypher]
@@ -53,9 +51,3 @@ DELETE n,r
 
 ----
 
-
-=== Find all vulcans
-[source,cypher]
-----
-match (n:vulcan) return n
-----
