@@ -52,7 +52,7 @@ match (n:vulcan) return n
 === What are the actions for Rock?
 [source,cypher]
 ----
-START r=(r.name="rock") 
+START r=node:(name="rock") 
 MATCH (r)-[:action]->(x) 
 RETURN action, x
 ----
