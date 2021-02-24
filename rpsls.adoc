@@ -15,16 +15,13 @@ Use the statement below to populate the graph with the objects and relationships
 CREATE p=(paper:object {name:"paper"})-[:covers]->(rock:object {name:"rock"})-[:crushes]->(scissors:object {name:"scissors"})-[:decapitates]->(lizard:animal {name:"lizard"})-[:poisons]->(spock:vulcan:person {name:"spock"})-[:vaporizes]->(rock)-[:crushes]->(lizard)-[:eats]->(paper)-[:disproves]->(spock)-[:smashes]->(scissors)-[:cuts]->(paper)
 ----
 
+== Wipe the database
 Use the code below at any time to wipe the database and start over...
 [source,cypher]
 ----
-START n = node(*) 
-MATCH n-[r]-() 
-DELETE n,r
+MATCH (n)
+DETACH DELETE (n)
 ----
-
-== The Basics
-
 
 === Find all Objects
 [source,cypher]
@@ -46,30 +43,27 @@ match n where NOT (n:object) return n
 match (n:vulcan) return n
 ----
 
-
-== Understanding the Game
-
-
 === What are the actions for Rock?
 [source,cypher]
 ----
-START rock=node(4)
-MATCH rock-[rel]->x
-return rock,rel,x
+MATCH (n:object{name:"rock"})-[rel]->x
+return n,r,x
 ----
 
 
 === What are the actions for Paper?
 [source,cypher]
 ----
-
+MATCH (n:object{name:"paper"})-[rel]->x
+return n,r,x
 ----
 
 
 === What are the actions for Scissors?
 [source,cypher]
 ----
-
+MATCH (n:object{name:"scissors"})-[rel]->x
+return n,r,x
 ----
 
 
@@ -77,6 +71,16 @@ return rock,rel,x
 
 [source,cypher]
 ----
+MATCH (n:object{name:"rock"})-[rel]->x
+return n,r,x
+----
 
+
+=== What are the actions for Spock?
+
+[source,cypher]
+----
+MATCH (n:vulcan{name:"Spock"})-[r]->x
+return n,r,x
 ----
 
